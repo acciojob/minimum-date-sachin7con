@@ -1,5 +1,23 @@
 function minDate(dates) {
-  //write you code here
+  //SGN write you code here
+	let datesMill = [];
+	for (let i = 0; i < dates.length; i++) {
+		const date = new Date(dates[i]);
+		const milliseconds = date.getTime();
+		datesMill.push(milliseconds);
+
+		
+		
+	}
+	datesMill.sort(function(a,b){ a-b });
+	const res = new Date(datesMill[0]);
+	const year = res.getUTCFullYear();
+	const month = res.getUTCMonth() + 1;
+	const day = res.getUTCDate();
+	const formattedDate = `${year}-${month}-${day}`;
+
+return formattedDate;
+	
 }
 
 // Do not change the code
@@ -37,4 +55,4 @@ var dates = [
   "2023/03/30",
 ];
 
-alert(minDate(dates));
+ alert(minDate(dates));
